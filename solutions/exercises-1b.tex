@@ -1,0 +1,156 @@
+%! Author = cs-cordero
+%! Date = 9/29/22
+
+% Preamble
+\documentclass[11pt]{article}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{titling}
+\usepackage{amssymb}
+
+\title{Linear Algebra Done Right, Third Edition \\ \vskip 0.5em \large Exercises 1.B}
+\preauthor{}
+\author{}
+\postauthor{}
+\predate{}
+\postdate{}
+\date{}
+
+% Custom commands
+\newcommand{\problemseparator}{\vskip 1em \hrule \vskip 1em}
+\newcommand{\finishsolution}{\rightline{$\blacksquare$}}
+
+% Document
+\begin{document}
+    \maketitle
+    \subsection*{Problem 1}
+    Prove that $-(-v) = v$ for every $v \in \mathbb{V}$.
+
+    \problemseparator
+
+    \finishsolution
+    \newpage
+
+    \subsection*{Problem 2}
+    Suppose $a \in \mathbb{F}, v \in \mathbb{V}$, and $av = 0$.
+    Prove that $a = 0$ or $v = 0$.
+
+    \problemseparator
+
+    \finishsolution
+    \newpage
+
+    \subsection*{Problem 3}
+    Suppose $v, w \in \mathbb{V}$.
+    Explain why there exists a unique $x \in \mathbb{V}$ such that $v + 3x = w$.
+
+    \problemseparator
+
+    \finishsolution
+    \newpage
+
+    \subsection*{Problem 4}
+    The empty set is not a vector space.
+    The empty set fails to satisfy only one of the requirements listed in 1.19.
+    Which one?
+
+    \subsubsection*{1.19 Definition \emph{vector space}}
+    A \emph{vector space} is a set $\mathbb{V}$ along with an addition on $\mathbb{V}$ and a scalar multiplication on $\mathbb{V}$ such that the following properties hold:
+
+    \vskip 0.5em \noindent{\textbf{commutativity}}
+
+    $u + v = v + u$ for all $u, v \in \mathbb{V}$.
+
+    \vskip 0.5em \noindent{\textbf{associativity}}
+
+    $(u + v) + w = u + (v + w)$ and $(ab)v = a(bv)$ for all $u, v, w \in \mathbb{V}$ and all $a, b \in \mathbb{F}$.
+
+    \vskip 0.5em \noindent{\textbf{additive identity}}
+
+    there exists an element $0 \in \mathbb{V}$ such that $v + 0 = v$ for all $v \in \mathbb{V}$.
+
+    \vskip 0.5em \noindent{\textbf{additive inverse}}
+
+    for every $v \in \mathbb{V}$, there exists $w \in \mathbb{V}$ such that $v + w = 0$.
+
+    \vskip 0.5em \noindent{\textbf{multiplicative identity}}
+
+    $1v = v$ for all $v \in \mathbb{V}$
+
+    \vskip 0.5em \noindent{\textbf{distributive properties}}
+
+    $a(u + v) = au + av$ and $(a + b)v = av + bv$ for all $a, b \in \mathbb{F}$ and all $u, v \in \mathbb{F}$.
+
+    \problemseparator
+
+    \finishsolution
+    \newpage
+
+    \subsection*{Problem 5}
+    Show that the definition of a vector space (1.19, see copied statement in problem 4 above), the additive inverse condition can be replaced with teh condition that
+
+    \[ 0v = 0 \text{ for all } v \in \mathbb{V} \]
+
+    Here the 0 on hte left side is the number 0, and the 0 on the right side is the additive identity of $\mathbb{V}$.
+    (The phrase ``a condition can be replaced'' in a definition means that the collection of objects satisfying the definition is unchanged if the original condition is replaced with the new condition.)
+
+    \problemseparator
+
+    \finishsolution
+    \newpage
+
+    \subsection*{Problem 6}
+    Let $\infty$ and $-\infty$ denote two distinct objects, neither of which is in $\mathbb{R}$.
+    Define an addition and scalar multiplication on $\mathbb{R} \cup \left{\infty\right} \cup \left{-\infty\right}$ as you could guess from the notation.
+    Specifically, the sum and product of two real numbers is as usual, and for $t \in \mathbb{R}$ define
+
+    \[
+        \begin{split}
+            t \infty = \left\{
+                \begin{array}{lr}
+                    -\infty & \text{if } t < 0, \\
+                    0 & \text{if } t = 0, \\
+                    \infty & \text{if } t > 0
+                \end{array}
+        \end{split}
+        \qquad \qquad
+        \begin{split}
+            t(-\infty) = \left\{
+            \begin{array}{lr}
+                \infty & \text{if } t < 0, \\
+                0 & \text{if } t = 0, \\
+                -\infty & \text{if } t > 0
+            \end{array}
+        \end{split}
+    \]
+    \[
+        \begin{split}
+            t + \infty = \infty + t = \infty,
+        \end{split}
+        \qquad \qquad
+        \begin{split}
+            t + (-\infty) = (-\infty) + t = -\infty,
+        \end{split}
+    \]
+    \[
+        \begin{split}
+            \infty + \infty = \infty,
+        \end{split}
+        \qquad \qquad
+        \begin{split}
+            (-\infty) + (-\infty) = -\infty,
+        \end{split}
+        \qquad \qquad
+        \begin{split}
+            \infty + (-\infty) = 0
+        \end{split}
+    \]
+
+    \noindent{Is $\mathbb{R} \cup \left{\infty\right} \cup \left{-\infty\right}$ a vector space over \mathbb{R}? Explain.}
+
+    \problemseparator
+
+    \finishsolution
+    \newpage
+\end{document}

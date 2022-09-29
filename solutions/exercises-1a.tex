@@ -1,0 +1,656 @@
+%! Author = cs-cordero
+%! Date = 9/28/22
+
+% Preamble
+\documentclass[11pt]{article}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{titling}
+\usepackage{amssymb}
+
+\title{Linear Algebra Done Right, Third Edition \\ \vskip 0.5em \large Exercises 1.A}
+\preauthor{}
+\author{}
+\postauthor{}
+\predate{}
+\postdate{}
+\date{}
+
+% Custom commands
+\newcommand{\problemseparator}{\vskip 1em \hrule \vskip 1em}
+\newcommand{\finishsolution}{\rightline{$\blacksquare$}}
+
+% Document
+\begin{document}
+    \maketitle
+    \subsection*{Problem 1}
+    Suppose $a$ and $b$ are real numbers, not both 0.
+    Find real numbers $c$ and $d$ such that:
+    \[ \frac{1}{a + bi} = c + di \]
+
+    \problemseparator
+
+    Using complex number arithmetic, we can solve for $c$ and $d$ in terms of $a$ and $b$ with the following:
+
+    \begin{equation*}
+        \begin{split}
+            \begin{aligned}
+                \frac{1}{a + bi} &= c + di \\
+                1 &= (a + bi)(c + di) \\
+                1 + 0i &= ac + adi + bci + bdi^2 \\
+                1 + 0i &= (ac - bd) + (ad + bc)i
+            \end{aligned}
+        \end{split}
+        \qquad \qquad
+        \begin{split}
+            \begin{aligned}
+                1 &= ac - bd \\
+                1 + bd &= ac \\
+                \frac{1 + bd}{a} &= c
+            \end{aligned}
+        \end{split}
+        \qquad \qquad
+        \begin{split}
+            \begin{aligned}
+                0 &= ad + bc \\
+                -ad &= bc \\
+                \frac{-ad}{b} &= c
+            \end{aligned}
+        \end{split}
+    \end{equation*}
+
+    \begin{equation*}
+        \begin{split}
+            \begin{aligned}
+                \frac{1 + bd}{a} &= \frac{-ad}{b} \\
+                b + b^{2}d &= -a^{2}d \\
+                a^{2}d + b^{2}d &= -b \\
+                d &= \frac{-b}{a^2 + b^2}
+            \end{aligned}
+        \end{split}
+        \qquad \qquad
+        \begin{split}
+            \begin{aligned}
+                c &= \frac{-ad}{b} \\
+                c &= \frac{-a(\frac{-b}{a^2 + b^2})}{b} \\
+                c &= \frac{\frac{ab}{a^2 + b^2}}{b} \\
+                c &= \frac{a}{a^2 + b^2}
+            \end{aligned}
+        \end{split}
+    \end{equation*}
+
+    \finishsolution
+    \newpage
+
+    \subsection*{Problem 2}
+    Show that:
+    \[ \frac{-1 + \sqrt{3}i}{2} \]
+    \ldots is a cube root of 1 (meaning that its cube equals 1).
+
+    \problemseparator
+
+    We just have to use our basic arithmetic to demonstrate that cubing the term results in giving us $1$.
+
+    \[
+        \begin{aligned}
+            1 &= (\frac{-1 + \sqrt{3}i}{2})^{3} \\
+            &= \frac{(-1 + \sqrt{3}i)^{3}}{2^3} \\
+            &= \frac{(-1 + \sqrt{3}i)(-1 + \sqrt{3}i)(-1 + \sqrt{3}i)}{8} \\
+            &= \frac{(1 - 2\sqrt{3}i + 3i^2)(-1 + \sqrt{3}i)}{8} \\
+            &= \frac{(1 - 2\sqrt{3}i - 3)(-1 + \sqrt{3}i)}{8} \\
+            &= \frac{(-2 - 2\sqrt{3}i)(-1 + \sqrt{3}i)}{8} \\
+            &= \frac{2 - 2\sqrt{3}i + 2\sqrt{3}i - 2(3)i^2}{8} \\
+            &= \frac{2 - 6i^2}{8} \\
+            &= \frac{2 + 6}{8} \\
+            &= \frac{8}{8} \\
+            &= 1
+        \end{aligned}
+    \]
+
+    \finishsolution
+    \newpage
+
+    \subsection*{Problem 3}
+    Find two distinct square roots of $i$.
+
+    \problemseparator
+
+    A square root of $i$ is one where for some $x$, $x^2 = i$.
+    Since we're working with imaginary $i$, let's suppose x is a complex number, such that $a, b \in \mathbb{R}$ and:
+    \[ (a + bi)^2 = i\].
+
+    Then it follows that:
+
+    \[
+        \begin{aligned}
+            i &= (a + bi)^2 \\
+            0 + 1i &= (a + bi)(a + bi) \\
+            0 + 1i &= (a^2 - b^2) + 2abi
+        \end{aligned}
+    \]
+
+    We now have:
+
+    \[
+        \begin{split}
+            \begin{aligned}
+                0 &= a^2 - b^2 \\
+                b^2 &= a^2 \\
+                b &= \pm a
+            \end{aligned}
+        \end{split}
+        \qquad \rightrightarrows \qquad
+        \begin{split}
+            \begin{aligned}
+                1 &= 2ab \\
+                1 &= 2a(a) \\
+                1 &= 2a^2 \\
+                \pm \frac{1}{\sqrt{2}} &= a
+            \end{aligned}
+        \end{split}
+        \qquad \qquad
+        \begin{split}
+            \begin{aligned}
+                1 &= 2ab \\
+                1 &= 2a(-a) \\
+                \frac{1}{2} &= -a^2 \\
+                &\text{This branch is impossible}
+            \end{aligned}
+        \end{split}
+    \]
+
+    The first equation leads to the second and third equations above.
+    The third, however is a dead-end, because it leads to a contradiction.
+    This therefore implies that despite the first equation finding $b = \pm a$, it must be that $b = a$.
+    \
+    The second equation's branching path can be used to determine two possibilities for $b$.
+
+    \[
+        \begin{split}
+            \begin{aligned}
+                b &= \frac{1}{2\left(\frac{1}{\sqrt{2}}\right)} \\
+                b &= \frac{\sqrt{2}}{2}
+            \end{aligned}
+        \end{split}
+        \qquad \qquad
+        \begin{split}
+            \begin{aligned}
+                b &= \frac{1}{2\left(-\frac{1}{\sqrt{2}}\right)} \\
+                b &= -\frac{\sqrt{2}}{2}
+            \end{aligned}
+        \end{split}
+    \]
+
+    Therefore, two distinct square roots of $i$ are:
+
+    \[
+        \begin{split}
+            \frac{1}{\sqrt{2}} + \frac{\sqrt{2}}{2}i
+        \end{split}
+        \qquad \qquad
+        \begin{split}
+            -\frac{1}{\sqrt{2}} - \frac{\sqrt{2}}{2}i
+        \end{split}
+    \]
+
+    \finishsolution
+    \newpage
+
+    \subsection*{Problem 4}
+    Show that $\alpha + \beta = \beta + \alpha$ for all $\alpha, \beta \in \mathbb{C}$.
+
+    \problemseparator
+
+    This can be demonstrated using complex number arithmetic.
+
+    Suppose that:
+
+    \begin{align*}
+        \alpha &= a + bi \\
+        \beta &= c + di
+    \end{align*}
+
+    Then it follows that:
+
+    \[
+        \begin{aligned}
+            \alpha + \beta &= \beta + \alpha \\
+            (a + bi) + (c + di) &= (c + di) + (a + bi) \\
+            (a + c) + (b + d)i &= (c + a) + (d + b)i \\
+            (a + c) + (b + d)i &= (a + c) + (b + d)i
+        \end{aligned}
+    \]
+
+    \finishsolution
+
+    \subsection*{Problem 5}
+    Show that $(\alpha + \beta) + \lambda = \alpha + (\beta + \lambda)$ for all $\alpha, \beta, \lambda \in \mathbb{C}$.
+
+    \problemseparator
+
+    This can be demonstrated using complex number arithmetic.
+
+    Suppose that:
+
+    \begin{align*}
+        \alpha &= a + bi \\
+        \beta &= c + di \\
+        \lambda &= e + fi
+    \end{align*}
+
+    Then it follows that:
+
+    \[
+        \begin{aligned}
+            (\alpha + \beta) + \lambda &= \alpha + (\beta + \lambda) \\
+            ((a + bi) + (c + di)) + (e + fi) &= (a + bi) + ((c + di) + (e + fi)) \\
+            ((a + c) + (b + d)i) + (e + fi) &= (a + bi) + ((c + e) + (d + f)i) \\
+            (a + c + e) + (b + d + f)i &= (a + c + e) + (b + d + f)i
+        \end{aligned}
+    \]
+
+    \finishsolution
+    \newpage
+
+    \subsection*{Problem 6}
+    Show that $(\alpha \beta) \lambda = \alpha (\beta \lambda)$ for all $\alpha, \beta, \lambda \in \mathbb{C}$.
+
+    \problemseparator
+    This can be demonstrated using complex number arithmetic.
+
+    Suppose that:
+
+    \begin{align*}
+        \alpha &= a + bi \\
+        \beta &= c + di \\
+        \lambda &= e + fi
+    \end{align*}
+
+    Then it follows that:
+
+    \[
+        \begin{aligned}
+            (\alpha \beta) \lambda &= \alpha (\beta \lambda) \\
+            ((a + bi)(c + di))(e + fi) &= (a + bi)((c + di)(e + fi)) \\
+            ((ac - bd) + (ad + bc)i)(e + fi) &= (a + bi)((ce - df) + (cf + de)i)
+        \end{aligned}
+    \]
+    \begin{multline*}
+        (ace - bde - adf - bcf) + (acf - bdf + ade + bce)i \\
+            = (ace - adf - bcf - bde) + (acf + ade + bce - bdf)i
+    \end{multline*}
+    \begin{multline*}
+        (ace - bde - adf - bcf) + (acf - bdf + ade + bce)i \\
+            = (ace - bde - adf - bcf) + (acf - bdf + ade + bce)i
+    \end{multline*}
+
+    \finishsolution
+    \newpage
+
+    \subsection*{Problem 7}
+    Show that for every $\alpha \in \mathbb{C}$, there exists a unique $\beta \in \mathbb{C}$ such that $\alpha + \beta = 0$.
+
+    \problemseparator
+    This can be demonstrated using complex number arithmetic.
+
+    Define $\beta$ as:
+
+    \[ \alpha + \beta = 0 \]
+
+    \ldots such that $\alpha = a + bi$ and $\beta = c + di$, and $a, b, c, d \in \mathbb{R}$.
+
+    Then it follows that:
+
+    \[
+        \begin{aligned}
+            \alpha + \beta &= 0 \\
+            (a + bi) + (c + di) &= 0 + 0i \\
+            (a + c) + (b + d)i &= 0 + 0i
+        \end{aligned}
+    \]
+    \[
+        \begin{split}
+            a + c = 0
+        \end{split}
+        \qquad \qquad
+        \begin{split}
+            b + d = 0
+        \end{split}
+    \]
+
+    Thus, for every $a$ there is only a single solution, $-c$ that will make $a + c = 0$.
+    And for every $b$ there is only a single solution, $-d$ that will make $b + d = 0$.
+
+    Therefore, for every $\alpha = a + bi$, there exists a single $c + di = \beta$ that will make $\alpha + \beta = 0$.
+
+    \finishsolution
+    \newpage
+
+    \subsection*{Problem 8}
+    Show that for every $\alpha \in \mathbb{C}$ with $\alpha \neq 0$, there exists a unique $\beta \in \mathbb{C}$ such that $\alpha \beta = 1$.
+
+    \problemseparator
+    This can be demonstrated using complex number arithmetic.
+
+    Define $\beta$ as:
+
+    \[ \alpha \beta = 1 \]
+
+    \ldots such that $\alpha = a + bi$ and $\beta = c + di$, and $a, b, c, d \in \mathbb{R}$.
+
+    Then it follows that:
+
+    \[
+        \begin{aligned}
+            \alpha \beta &= 1 \\
+            (a + bi)(c + di) &= 1 + 0i \\
+            (ac - bd) + (ad + bc)i &= 1 + 0i
+        \end{aligned}
+    \]
+    \vskip 1em
+    \[
+        \begin{split}
+            \begin{aligned}
+                ac - bd &= 1 \\
+                c &= \frac{1 + bd}{a}
+            \end{aligned}
+        \end{split}
+        \qquad \qquad
+        \begin{split}
+            \begin{aligned}
+                ad + bc &= 0 \\
+                -\frac{ad}{b} &= c
+            \end{aligned}
+        \end{split}
+    \]
+    \vskip 1em
+    \[
+        \begin{split}
+            \begin{aligned}
+                \frac{1 + bd}{a} &= -\frac{ad}{b} \\
+                b + b^{2}d &= -a^{2}d \\
+                a^{2} + b^{2}d &= -b \\
+                d &= \frac{-b}{a^2 + b^2}
+            \end{aligned}
+        \end{split}
+        \qquad \qquad
+        \begin{split}
+            \begin{aligned}
+                c &= -\frac{ad}{b} \\
+                c &= -\frac{a(\frac{-b}{a^2 + b^2})}{b} \\
+                c &= \frac{\frac{ab}{a^2 + b^2}}{b} \\
+                c &= \frac{a}{a^2 + b^2}
+            \end{aligned}
+        \end{split}
+    \]
+
+    Thus, we have shown that for any arbitrary $\alpha = a + bi$, there is only one $c$ and $d$ for $\beta = c + di$ such that $\alpha \beta = 1$:
+
+    \[ \beta = \frac{a}{a^2 + b^2} + \frac{-b}{a^2 + b^2}i \].
+
+    \finishsolution
+    \newpage
+
+    \subsection*{Problem 9}
+    Show that for every $\lambda(\alpha + \beta) = \lambda \alpha + \lambda \beta$ for all $\lambda, \alpha, \beta \in \mathbb{C}$.
+
+    \problemseparator
+    This can be demonstrated using complex number arithmetic.
+
+    Suppose that:
+
+    \begin{align*}
+        \alpha &= a + bi \\
+        \beta &= c + di \\
+        \lambda &= x + yi
+    \end{align*}
+
+    Then it follows that:
+
+    \[
+        \begin{aligned}
+            \lambda (\alpha + \beta) &= \lambda \alpha + \lambda \beta \\
+            (x + yi) ((a + bi) + (c +di)) &= (x + yi)(a + bi) + (x + yi)(c + di) \\
+        \end{aligned}
+    \]
+    \begin{multline*}
+        (x + yi) ((a + c) + (b + d)i) \\
+            = ((ax - by) + (bx + ay)i) + ((cx - dy) + (dx + cy)i)
+    \end{multline*}
+    \begin{multline*}
+        (ax + cx - by - dy) + (bx + dx + ay + cy)i \\
+            = (ax - by + cx - dy) + (bx + ay + dx + cy)i
+    \end{multline*}
+    \begin{multline*}
+        (ax + cx - by - dy) + (bx + dx + ay + cy)i \\
+            = (ax + cx - by - dy) + (bx + dx + ay + cy)i
+    \end{multline*}
+
+    \finishsolution
+    \newpage
+
+    \subsection*{Problem 10}
+    Find $x \in \mathbb{R}^4$ such that
+
+    \[ (4, -3, 1, 7) + 2x = (5, 9, -6, 8) \]
+
+    \problemseparator
+    This can be demonstrated using complex number arithmetic.
+    Adding two lists are done component-wise.
+
+    \[
+        \begin{aligned}
+            (4, -3, 1, 7) + 2x &= (5, 9, -6, 8) \\
+            (4, -3, 1, 7) + 2(x_1, x_2, x_3, x_4) &= (5, 9, -6, 8)
+        \end{aligned}
+    \]
+    \vskip 1em
+    \[
+        \begin{split}
+            \begin{aligned}
+                4 + 2x_1 &= 5 \\
+                -3 + 2x_2 &= 9 \\
+                1 + 2x_3 &= -6 \\
+                7 + 2x_4 &= 8
+            \end{aligned}
+        \end{split}
+        \qquad \implies \qquad
+        \begin{split}
+            \begin{aligned}
+                x_1 &= \frac{1}{2} \\
+                x_2 &= 6 \\
+                x_3 &= -\frac{7}{2} \\
+                x_4 &= \frac{1}{2}
+            \end{aligned}
+        \end{split}
+    \]
+
+    Thus, $x = \left(\frac{1}{2}, 6, -\frac{7}{2}, \frac{1}{2} \right)$.
+
+    \finishsolution
+    \newpage
+
+    \subsection*{Problem 11}
+    Explain why there does not exist $\lambda \in \mathbb{C}$ such that:
+
+    \[ \lambda (2 - 3i, 5 + 4i, -6 + 7i) = (12 - 5i, 7 + 22i, -32 - 9i) \]
+
+    \problemseparator
+
+    Define $\lambda$ as $\lambda = a + bi$ such that $a, b \in \mathbb{R}$.
+
+    In order for the equation above to hold, there must be a single $\lambda$ such that all of the following component-wise equations also hold:
+
+    \[
+        \begin{aligned}
+            (a + bi)(2 - 3i) &= 12 - 5i \\
+            (a + bi)(5 + 4i) &= 7 + 22i \\
+            (a + bi)(-6 + 7i) &= -32 - 9i
+        \end{aligned}
+    \]
+
+    It can be proven that there exists one $a + bi = \lambda$ such that the first two equations hold.
+    This value is $\lambda = 3 + 2i$.
+
+    \[
+        \begin{split}
+            \begin{aligned}
+                (3 + 2i)(2 - 3i) &= 12 - 5i \\
+                6 - 9i + 4i - 6i^2 &= 12 - 5i \\
+                12 - 5i &= 12 - 5i
+            \end{aligned}
+        \end{split}
+        \qquad \qquad
+        \begin{split}
+            \begin{aligned}
+                (3 + 2i)(5 + 4i) &= 7 + 22i \\
+                15 + 12i + 10i + 8i^2 &= 7 + 22i \\
+                7 + 22i &= 7 + 22i
+            \end{aligned}
+        \end{split}
+    \]
+
+    However, when applied to the third equation, it does not hold, which means that the $\lambda$ that fulfills the target equation does not exist.
+
+    \[
+        \begin{aligned}
+            (3 + 2i)(-6 + 7i) &= -32 - 9i \\
+            -18 + 21i - 12i + 14i^2 &= -32 - 9i \\
+            -32 + 9i &\neq -32 - 9i
+        \end{aligned}
+    \]
+
+    \finishsolution
+    \newpage
+
+    \subsection*{Problem 12}
+    Show that $(x + y) + z = x + (y + z)$ for all $x, y, z \in \mathbb{F}^n$.
+
+    \problemseparator
+
+    Suppose that:
+
+    \[
+        \begin{aligned}
+            x &= x_1, \cdots, x_n \\
+            y &= y_1, \cdots, y_n \\
+            z &= z_1, \cdots, z_n
+        \end{aligned}
+    \]
+
+    Then it follows that:
+
+    \[
+        \begin{aligned}
+            (x + y) + z &= ((x_1, \cdots, x_n) + (y_1, \cdots, y_n)) + (z_1, \cdots, z_n) \\
+                &= (x_1 + y_1, \cdots, x_n + y_n) + (z_1, \cdots, z_n) \\
+                &= x_1 + y_1 + z_1, \cdots, x_n + y_n + z_n \\
+                &= x_1 + (y_1 + z_1), \cdots, x_n + (y_n + z_n) \\
+                &= (x_1, \cdots, x_n) + (y_1 + z_1, \cdots, y_n + z_n) \\
+                &= x + (y + z)
+        \end{aligned}
+    \]
+
+
+    \finishsolution
+
+    \subsection*{Problem 13}
+    Show that $(ab)x = a(bx)$ for all $x \in \mathbb{F}^n$ and all $a, b \in \mathbb{F}$.
+
+    \problemseparator
+
+    Suppose that:
+
+    \[ x = (x_1, \cdots, x_n) \]
+
+    Then it follows that:
+
+    \[
+        \begin{aligned}
+            (ab)x &= (ab)(x_1, \cdots, x_n) \\
+                &= abx_1, \cdots, abx_n \\
+                &= a(bx_1), \cdots, a(bx_n) \\
+                &= a\left(bx_1, \cdots, bx_n\right) \\
+                &= a(bx)
+        \end{aligned}
+    \]
+
+    \finishsolution
+    \newpage
+
+    \subsection*{Problem 14}
+    Show that $1x = x$ for all $x \in \mathbb{F}^n$.
+
+    \problemseparator
+
+    Suppose that:
+
+    \[ x = (x_1, \cdots, x_n) \]
+
+    Then it follows that:
+
+    \[
+        \begin{aligned}
+            1x &= 1(x_1, \cdots, x_n) \\
+                &= 1x_1, \cdots, 1x_n \\
+                &= x_1, \cdots, x_n \\
+                &= x
+        \end{aligned}
+    \]
+
+    \finishsolution
+
+    \subsection*{Problem 15}
+    Show that $\lambda (x + y) = \lambda x + \lambda y$ for all $\lambda \in \mathbb{F}$ and all $x, y \in \mathbb{F}^n$.
+
+    \problemseparator
+
+    Suppose that:
+
+    \[
+        \begin{aligned}
+            x = (x_1, \cdots, x_n) \\
+            y = (y_1, \cdots, y_n)
+        \end{aligned}
+    \]
+
+    Then it follows that:
+
+    \[
+        \begin{aligned}
+            \lambda (x + y) &= \lambda ((x_1, \cdots, x_n) + (y_1, \cdots, y_n)) \\
+            &= \lambda (x_1 + y_1, \cdots, x_n + x_n) \\
+            &= \lambda (x_1 + y_1), \cdots, \lambda (x_n + x_n) \\
+            &= \lambda x_1 + \lambda y_1, \cdots, \lambda x_n + \lambda x_n \\
+            &= (\lambda x_1, \cdots, \lambda x_n) + (\lambda y_1, \cdots, \lambda y_n) \\
+            &= \lambda (x_1, \cdots, x_n) + \lambda (y_1, \cdots, y_n) \\
+            &= \lambda x + \lambda y
+        \end{aligned}
+    \]
+
+    \finishsolution
+    \newpage
+    \subsection*{Problem 16}
+    Show that $(a + b)x = ax + bx$ for all $a, b \in \mathbb{F}$ and all $x \in \mathbb{F}^n$.
+
+    \problemseparator
+
+    Suppose that:
+
+    \[ x = (x_1, \cdots, x_n) \]
+
+    Then it follows that:
+
+    \[
+        \begin{aligned}
+            (a + b)x &= (a + b)(x_1, \cdots, x_n) \\
+            &= (a + b)x_1, \cdots, (a + b)x_n \\
+            &= ax_1 + bx_1, \cdots, ax_n + bx_n \\
+            &= (ax_1, \cdots, ax_n) + (bx_1, \cdots, bx_n) \\
+            &= ax + bx
+        \end{aligned}
+    \]
+
+    \finishsolution
+\end{document}
