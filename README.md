@@ -9,6 +9,7 @@ take everything written with a grain of salt.  I am not a mathematician!  (And I
 
 * Chapter 1: Vector Spaces
   * [Exercises 1.A](https://latexonline.cc/compile?git=https://github.com/cs-cordero/ladr-solutions&target=solutions/exercises-1a.tex&command=pdflatex&force=true)
+  * [Exercises 1.B](https://latexonline.cc/compile?git=https://github.com/cs-cordero/ladr-solutions&target=solutions/exercises-1b.tex&command=pdflatex&force=true)
 
 ## Author
 

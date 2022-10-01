@@ -29,6 +29,18 @@
 
     \problemseparator
 
+    First, the notation $-v$ denotes a scalar multiplication of $(-1)v$.
+
+    Therefore:
+
+    \[
+        \begin{aligned}
+            -(-v) &= -1(-1(v)) \\
+                &= 1(v) \\
+                &= v
+        \end{aligned}
+    \]
+
     \finishsolution
     \newpage
 
@@ -38,6 +50,39 @@
 
     \problemseparator
 
+    First, let's suppose $v \neq 0$ and $a = 0$.
+    Note that any element, $f$, of a field, $\mathbb{F}$, has a multiplicative inverse, such that $ff^{-1} = 1$.
+    We can multiply both sides of the equation by this multiplicative inverse.
+    It then follows that:
+
+    \[
+        \begin{aligned}
+            0 &= av \\
+            0v^{-1} &= avv^{-1} \\
+            0 &= a(vv^{-1}) \\
+            0 &= a1 \\
+            0 &= a
+        \end{aligned}
+    \]
+
+    Therefore, $a$ must be zero.
+
+    If we suppose $a \neq 0$ and $v = 0$, the outcome is similar.
+
+    \[
+        \begin{aligned}
+            0 &= av \\
+            0a^{-1} &= aa^{-1}v \\
+            0 &= (aa^{-1})v \\
+            0 &= 1v \\
+            0 &= v
+        \end{aligned}
+    \]
+
+    Thus $v$ must be zero.
+
+    Finally, it should be obvious to see that if \emph{both} $a = 0$ and $v = 0$, then $av = 0$.
+
     \finishsolution
     \newpage
 
@@ -46,6 +91,23 @@
     Explain why there exists a unique $x \in \mathbb{V}$ such that $v + 3x = w$.
 
     \problemseparator
+
+    \[
+        \begin{aligned}
+            v + 3x &= w \\
+            v + 3x - w &= 0 \\
+            v - w + 3x &= 0 \\
+            (v - w) + 3x &= 0
+        \end{aligned}
+    \]
+
+    Since $v - w = v + (-w) \in \mathbb{V}$ due to the definition of addition for the vector space $\mathbb{V}$,
+    we can define $v' = (v - w)$, and so we have $v' + 3x = 0$.
+
+    By theorem 1.26, which states that ``every element in a vector space has a unique additive inverse'', the
+    additive inverse of $v'$ is $3x$ and it must be unique.
+
+    Therefore, there is a unique $x$ such that $v + 3x = w$.
 
     \finishsolution
     \newpage
@@ -84,6 +146,13 @@
 
     \problemseparator
 
+    For the empty set, ${}$, the properties of \emph{commutativity}, \emph{associativity},
+    \emph{additive inverse}, \emph{multiplicative identity}, and \emph{distributive properties}
+    are known to be \textbf{vacuously true}.
+
+    The property it fails to meet, is the \emph{additive identity}, because in the empty set,
+    an element called zero $0$ does not exist.
+
     \finishsolution
     \newpage
 
@@ -92,17 +161,44 @@
 
     \[ 0v = 0 \text{ for all } v \in \mathbb{V} \]
 
-    Here the 0 on hte left side is the number 0, and the 0 on the right side is the additive identity of $\mathbb{V}$.
+    Here the 0 on the left side is the number 0, and the 0 on the right side is the additive identity of $\mathbb{V}$.
     (The phrase ``a condition can be replaced'' in a definition means that the collection of objects satisfying the definition is unchanged if the original condition is replaced with the new condition.)
 
     \problemseparator
+
+    If the above condition could replace the additive inverse condition,
+    it follows that $0v = 0$ if and only if there exists $w \in \mathbb{V}$ such that $v + w = 0$
+
+    \[
+        \begin{split}
+            0v = v
+        \end{split}
+        \qquad \qquad
+        \begin{split}
+            v + w = 0
+        \end{split}
+    \]
+
+    In both of the above equations, the $0$ on the right-hand sides are both referring to the same value: the \emph{additive identity} of $\mathbb{V}$.
+    Therefore, we have:
+
+    \[
+        \begin{aligned}
+            0v &= v + w \\
+            0v - v &= w \\
+            v(0 - 1) &= w \\
+            -v &= w \\
+            0 &= v + w
+        \end{aligned}
+    \]
+
 
     \finishsolution
     \newpage
 
     \subsection*{Problem 6}
     Let $\infty$ and $-\infty$ denote two distinct objects, neither of which is in $\mathbb{R}$.
-    Define an addition and scalar multiplication on $\mathbb{R} \cup \left{\infty\right} \cup \left{-\infty\right}$ as you could guess from the notation.
+    Define an addition and scalar multiplication on $\mathbb{R} \cup \left\{ \infty \right\} \cup \left\{ -\infty \right\}$ as you could guess from the notation.
     Specifically, the sum and product of two real numbers is as usual, and for $t \in \mathbb{R}$ define
 
     \[
@@ -113,6 +209,7 @@
                     0 & \text{if } t = 0, \\
                     \infty & \text{if } t > 0
                 \end{array}
+                \right.
         \end{split}
         \qquad \qquad
         \begin{split}
@@ -122,6 +219,7 @@
                 0 & \text{if } t = 0, \\
                 -\infty & \text{if } t > 0
             \end{array}
+            \right.
         \end{split}
     \]
     \[
@@ -147,9 +245,25 @@
         \end{split}
     \]
 
-    \noindent{Is $\mathbb{R} \cup \left{\infty\right} \cup \left{-\infty\right}$ a vector space over \mathbb{R}? Explain.}
+    \noindent{Is $\mathbb{R} \cup \left\{\infty\right\} \cup \left\{-\infty\right\}$ a vector space over $\mathbb{R}$? Explain.}
 
     \problemseparator
+
+    $\mathbb{R} \cup \left\{\infty\right\} \cup \left\{-\infty\right\}$ is \textbf{not} a vector space over $\mathbb{R}$.
+    It violates the property of associativity.
+
+    If it were a vector space, the following equation would hold, but it doesn't.
+
+    \[
+        \begin{aligned}
+            \left( t + \infty \right) - \infty &= t + \left( \infty - \infty \right) \\
+            \infty - \infty &= t + 0 \\
+            0 &\neq t
+        \end{aligned}
+    \]
+
+    Hence, $\left( t + \infty \right) - \infty$ does not equal $t + \left( \infty - \infty \right)$, which
+    contradicts the definition of a vector space and precludes this set from being one.
 
     \finishsolution
     \newpage
